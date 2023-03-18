@@ -64,7 +64,7 @@ class RestaurantsController < ApplicationController
        end
       
        def destroy
-         restaurant = Restaurant.find(params[:id])
+         restaurant = Restaurant.find_by(id: params[:id])
          restaurant.destroy
          head :no_content
        end

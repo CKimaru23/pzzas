@@ -4,7 +4,7 @@ class PizzasController < ApplicationController
   
     def index
       pizzas = Pizza.all
-      render json: pizzas, each_serializer: PizzaSerializer
+      render json: pizzas
     end
   
     def create
@@ -14,13 +14,13 @@ class PizzasController < ApplicationController
   
     def show
       pizza = Pizza.find(params[:id])
-      render json: pizza, serializer: PizzaSerializer
+      render json: pizza
     end
   
     def update
       pizza = Pizza.find(params[:id])
       pizza.update!(pizza_params)
-      render json: pizza, serializer: PizzaSerializer
+      render json: pizza
     end
   
     def destroy
