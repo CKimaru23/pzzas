@@ -37,11 +37,11 @@ class PizzasController < ApplicationController
     private
   
     def pizza_params
-      params.permit(:name, :ingredients)
+      params.permit(:name)
     end
   
     def restaurant_pizza_params
-      params.require(:restaurant_pizza).permit(:price, :pizza_id, :restaurant_id)
+      params.require(:restaurant_pizza).permit(:pizza_id, :restaurant_id)
     end
   
     def render_not_found_response(exception)
